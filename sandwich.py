@@ -5,7 +5,7 @@ def sandwich_order(filling):
         "veg" : 45.00,
         "tuna" : 55.00,
         "bbq" : 60.00
-
+    
     }
     if filling in menu:
         print(f"The price of {filling} sandwich is  ${menu[filling]}:")
