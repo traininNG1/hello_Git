@@ -13,41 +13,44 @@ class Employee_Management_ssm:
         self.emp = []
 
     def add_employee(self,emp_id,name,position,salary):
-        
-    
         self.emp.append({"emp_id":emp_id,"name":name,"position":position,"salary":salary})
-        print(f"Employee{name} added successfully")
+        print(f"Employee {name} added successfully")
         # to remove
     def remove_employee(self,emp_id):
-        for employee in self.emp:
-            if employee.emp_id == emp_id:
-                self.emp.remove(employee)
+        for i in self.emp:
+            if i["emp_id"] == emp_id:
+                self.emp.remove(i)
                 print(f"Employee ID {emp_id} removed successfully ")
-
+    
     def display_employees(self):
         for employee in self.emp:
-            print("The list of employees are:",employee)
+            print(f"ID: {employee['emp_id']}, Name: {employee['name']}, Position: {employee['position']}, Salary: {employee['salary']}")
 
         #updating details using emp_id
     def update_employee(self,emp_id,name,position,salary):
-        for employee in self.emp:
-            if employee["emp_id"]==emp_id:
+        for i in self.emp:
+            if i["emp_id"]==emp_id:
+                if name:
+                    i["name"] = name
+                if position:
+                    i["position"] = position
+                if salary:
+                    i["salary"] = salary
                 print(f"Employee with ID: {emp_id},Name:{name}, Position:{position}, Salary:{salary} updated successfully")
-                #correction required
                 
                 return
             
         print(f"{emp_id} Not found")
-
-a = Employee_Management_ssm().add_employee("STI20","Albi","b analyst",30000)
-b = Employee_Management_ssm().add_employee("STI25","Jeeva","Testing",25000)
-c = Employee_Management_ssm().add_employee("STI26","Ancy","developer",32000)
+nw = Employee_Management_ssm()
+nw.add_employee("STI20","Albi","b analyst",30000)
+nw.add_employee("STI25","Jeeva","Testing",25000)
+nw.add_employee("STI27","Ancy","developer",32000)
 
 #performing tasks
-d=Employee_Management_ssm().display_employees()
-e=Employee_Management_ssm().remove_employee("STI26")
-f=Employee_Management_ssm().update_employee("STI20","Albi","b analyst",35000)
-g=Employee_Management_ssm().display_employees()
+nw.display_employees()
+nw.remove_employee("STI20")
+nw.update_employee("STI25","Jeeva","Testing",salary=35000)
+nw.display_employees()
             
 
 
