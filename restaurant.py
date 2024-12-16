@@ -21,20 +21,24 @@ class staffManagement():
         print(f"Added staff Name: {name}, Role:{designation}")
     
     def view_staff(self):
-        print("Staff List:")
-        for name,designation in self.staff_list:
+       
+        for name,designation in self.staff_list.items():
             print(f"{name} : {designation}")
 
 class Restuarant(Menu_Management,staffManagement):
-    def __init__(self,order):
-        self.order = order
+    def __init__(self):
         Menu_Management.__init__(self)
         staffManagement.__init__(self)
 
+
     def show_details(self):
-        print("Menu:")
+       
         
-rest_a = Restuarant(order="pizza")    
+        self.display_items()  # Call the instance method on `self`
+        print("Staff List:")
+        self.view_staff()
+        
+rest_a = Restuarant()    
 
 rest_a.add_staff("FARIZ","accontant")
 rest_a.add_staff("bubbu","manager")
