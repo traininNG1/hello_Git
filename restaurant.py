@@ -43,7 +43,6 @@ rest_a = Restuarant()
 rest_a.add_staff("FARIZ","accontant")
 rest_a.add_staff("bubbu","manager")
 rest_a.add_staff("Ram","waiter")
-rest_a.show_details()
 rest_a.add_item("Pizza","$22.55")
 rest_a.add_item("pasta","$33.33")
-        
+rest_a.show_details()
