@@ -2,12 +2,12 @@
 class Menu_Management:
     def __init__(self):
         self.menu={}
+
     def add_item(self,item,price):
         self.menu[item] = price
         print(f"Added {item} to the menu, Price of {item} is :{price}")
 
     def display_items(self):
-        print("Menu:")
         for item,price in self.menu.items():
             print(f"{item} : {price}")
 
@@ -32,8 +32,7 @@ class Restuarant(Menu_Management,staffManagement):
 
 
     def show_details(self):
-       
-        
+        print("Menu:")
         self.display_items()  # Call the instance method on `self`
         print("Staff List:")
         self.view_staff()
