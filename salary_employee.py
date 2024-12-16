@@ -6,7 +6,7 @@ class Employee:
 
     def annual_salary_cal(self):
         annual_sal = self.salary*12
-        print(f"{self.name}'s annaul salary is {annual_sal}")
+        print(f"{self.name}'s annual salary is {annual_sal}")
         return annual_sal
 
 class Developer(Employee):
