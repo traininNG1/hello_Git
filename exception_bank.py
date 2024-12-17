@@ -1,7 +1,9 @@
 class InsufficientBalanceException(Exception):
     def __init__(self, msg="insufficient balance to withdraw the specified amount"):
         super().__init__(msg)
-
+class InvalidAmountException(Exception):
+    def __init__(self, msg1="Deposit amount should be minimum $1"):
+        super().__init__(msg1)
 
 
 class Bank_account:
@@ -12,10 +14,14 @@ class Bank_account:
 
     #method for deposit
     def deposit(self):
-        print("Deposit amount must be greater than 1")
         amount=int(input("Please enter the Deposit amount:"))
-        self.balance+= amount
-        print(f"Successfully deposited ${amount},available balance is : {self.balance}")
+        try:
+            if amount<=0:
+                raise InvalidAmountException("Deposit amount must be greater than 1")
+            self.balance+= amount
+            print(f"Successfully deposited ${amount},available balance is : {self.balance}")
+        except (InvalidAmountException) as a:
+            print(f"Error:{a}")
 
 
 
