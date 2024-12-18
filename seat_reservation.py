@@ -22,7 +22,7 @@ def main():
 
     threads =[]
     for id in range(1,num+1):
-        a = threading.Thread(target=user_thread,args=(id,))
+        a = threading.Thread(target=reserve_seat,args=(id,))
         threads.append(a)
         a.start()
 
