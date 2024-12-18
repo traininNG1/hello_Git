@@ -12,8 +12,7 @@ def reserve_seat(id):
         print(f"Passenger {id}:with {seat_request} seat(s) Booking Successfull!..Seat Left : {total_seat}")
     else:
         print(f"Passenger {id} Booking Failed..Not enough seats. seat left : {total_seat}")
-def user_thread(id):
-    reserve_seat(id)
+
 
 def main():
     global total_seat
