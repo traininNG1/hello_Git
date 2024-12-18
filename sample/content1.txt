@@ -1,0 +1,3 @@
+welcome, File handling in Python is a powerful and versatile tool.
+File handling in Python is highly flexible
+Hello, Everyone.........Enjoy your Day
